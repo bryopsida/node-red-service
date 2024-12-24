@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "main": "service.mjs",
   "scripts": {
+    "start": "node service.mjs",
+    "start:dev": "nodemon --watch service.mjs --exec node service.mjs",
     "test": "node --test *.spec.mjs",
     "lint": "standard .",
     "lint:fix": "standard --fix ."
@@ -11,9 +13,11 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "express": "^4.21.2",
     "node-red": "^4.0.8"
   },
   "devDependencies": {
+    "nodemon": "^3.1.9",
     "standard": "^17.1.2"
   }
 }
