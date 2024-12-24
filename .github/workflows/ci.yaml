@@ -1,0 +1,19 @@
+name: CI
+on:
+  schedule:
+    - cron: '22 4 * * *'
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  validate-node:
+    name: 'Validate'
+    uses: curium-rocks/flows/.github/workflows/node-ts.yml@main
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    with:
+      continue-on-prod-vulns: true

@@ -1,0 +1,14 @@
+{
+  "name": "@bryopsida/node-red-service",
+  "version": "0.1.0",
+  "main": "service.mjs",
+  "scripts": {
+    "test": "node --test *.spec.mjs"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "node-red": "^4.0.8"
+  }
+}
