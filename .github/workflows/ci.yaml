@@ -10,7 +10,7 @@ on:
 jobs:
   validate-node:
     name: 'Validate'
-    uses: curium-rocks/flows/.github/workflows/node-ts.yml@main
+    uses: curium-rocks/flows/.github/workflows/npm-lint-and-validate.yml@main
     permissions:
       contents: read
       actions: read
