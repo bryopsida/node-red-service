@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "main": "service.mjs",
   "scripts": {
-    "test": "node --test *.spec.mjs"
+    "test": "node --test *.spec.mjs",
+    "lint": "standard .",
+    "lint:fix": "standard --fix ."
   },
   "author": "",
   "license": "MIT",
   "description": "",
   "dependencies": {
     "node-red": "^4.0.8"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
   }
 }
