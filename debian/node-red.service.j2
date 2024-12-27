@@ -3,8 +3,8 @@ Description=Node-RED
 After=network.target
 
 [Service]
-ExecStart=/opt/bryopsida/node-red/service.mjs
-WorkingDirectory=/opt/bryopsida/node-red
+ExecStart=/opt/{{ node_red_org}}/node-red/service.mjs
+WorkingDirectory=/opt/{{ node_red_org }}/node-red
 User={{ node_red_uid }}
 Group={{ node_red_gid }}
 Restart=always
