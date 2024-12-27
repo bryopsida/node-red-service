@@ -13,6 +13,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "node-red": "^4.0.8"
   },

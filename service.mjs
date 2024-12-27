@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 import { createServer } from 'node:http'
 import { join } from 'node:path'
+import 'dotenv/config'
 import RED from 'node-red'
 import express from 'express'
+dotenv.config()
+
+const PORT = process.env.PORT || 3000
+const HOST = process.env.HOST || '127.0.0.1'
+const ADMIN_PATH = process.env.ADMIN_PATH || '/admin'
+const API_PATH = process.env.API_PATH || '/'
 
 export function getNodeRedConfig () {
   return {
-    httpAdminRoot: '/admin',
-    httpNodeRoot: '/',
+    httpAdminRoot: ADMIN_PATH,
+    httpNodeRoot: API_PATH,
     userDir: join(process.cwd(), 'data'),
     functionGlobalContext: { }
   }
@@ -21,7 +28,7 @@ app.use(settings.httpAdminRoot, RED.httpAdmin)
 app.use(settings.httpNodeRoot, RED.httpNode)
 
 export async function start () {
-  server.listen(3000, '0.0.0.0')
+  server.listen(PORT, HOST)
   await RED.start()
 }
 
