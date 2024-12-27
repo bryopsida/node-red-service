@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 import { createServer } from 'node:http'
 import { join } from 'node:path'
-import 'dotenv/config'
+import dotenv from 'dotenv'
 import RED from 'node-red'
 import express from 'express'
-dotenv.config()
+dotenv.config({
+  path: process.env.DOTENV_CONFIG_PATH || join(process.cwd(), '.env')
+})
 
 const PORT = process.env.PORT || 3000
 const HOST = process.env.HOST || '127.0.0.1'

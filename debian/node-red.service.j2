@@ -9,6 +9,6 @@ User={{ node_red_uid }}
 Group={{ node_red_gid }}
 Restart=always
 RestartSec=10
-
+Environment="DOTENV_CONFIG_PATH={{ node_red_dotenv_path }}"
 [Install]
 WantedBy=multi-user.target
