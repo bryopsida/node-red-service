@@ -9,13 +9,27 @@
 # No template variables specified
 
 "/opt/{{ node_red_org }}/node-red/service.mjs" {
-#include <abstractions/base>
+  #include <abstractions/base>
+  #include <abstractions/nis>
 
-# No abstractions specified
+  /usr/bin/node ix,
+  /usr/bin/dash ix,
 
-# No policy groups specified
+  /opt/{{ node_red_org }}/node-red/node_modules/@node-rs/** rm,
 
-# No read paths specified
+  /etc/ssl/openssl.cnf r,
+  /opt/{{ node_red_org /node-red/** r,
+  /etc/node-red/.env r,
+  /proc/** r,
+  /sys/devices/system/cpu/** r,
+  /sys/fs/cgroup/system.slice/node-red.service/** r,
+  /usr/bin/ldd r,
+  /run/systemd/resolve/stub-resolv.conf r,
+  /etc/nsswitch.conf r,
 
-# No write paths specified
+  capability net_bind_service,
+
+  network inet stream,
+  network inet6 stream,
+
 }
