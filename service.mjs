@@ -18,6 +18,13 @@ const API_PATH = process.env.API_PATH || '/'
 
 export function getNodeRedConfig () {
   return {
+    logging: {
+      console: {
+        level: 'trace',
+        metrics: true,
+        audit: true
+      }
+    },
     httpAdminRoot: ADMIN_PATH,
     httpNodeRoot: API_PATH,
     userDir: join(process.cwd(), 'data'),
@@ -37,6 +44,9 @@ export function getNodeRedConfig () {
       allowList: [],
       denyList: []
     },
+    editorTheme: {
+      theme: 'dracula'
+    },
     adminAuth: {
       type: 'strategy',
       strategy: {
@@ -47,10 +57,14 @@ export function getNodeRedConfig () {
         options: {
           clientID: process.env.GOOGLE_CLIENT_ID,
           clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-          callbackURL: `${process.env.EXTERNAL_ORIGION ?? 'http://localhost:3000'}${API_PATH}auth/google/callback`
-        },
-        verify: (_accessToken, _refreshToken, profile, cb) => {
-          cb(null, profile)
+          callbackURL: `${process.env.EXTERNAL_ORIGION ?? 'http://localhost:3000'}${ADMIN_PATH}/auth/strategy/callback`,
+          scope: ['profile', 'email'],
+          verify: (_accessToken, _refreshToken, profile, cb) => {
+            if (profile.username == null) {
+              profile.username = profile.emails[0].value
+            }
+            cb(null, profile)
+          }
         }
       },
       users: (process.env.ALLOWED_USERS ?? '').split(',').map((username) => {
