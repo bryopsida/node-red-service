@@ -57,7 +57,7 @@ export function getNodeRedConfig () {
         options: {
           clientID: process.env.GOOGLE_CLIENT_ID,
           clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-          callbackURL: `${process.env.EXTERNAL_ORIGION ?? 'http://localhost:3000'}${ADMIN_PATH}/auth/strategy/callback`,
+          callbackURL: `${process.env.EXTERNAL_ORIGIN ?? 'http://localhost:3000'}${ADMIN_PATH}/auth/strategy/callback`,
           scope: ['profile', 'email'],
           verify: (_accessToken, _refreshToken, profile, cb) => {
             if (profile.username == null) {
