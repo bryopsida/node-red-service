@@ -30,11 +30,15 @@
   /usr/bin/ldd r,
   /run/systemd/resolve/stub-resolv.conf r,
   /etc/nsswitch.conf r,
+  /etc/host.conf r,
+  /etc/hosts r,
 
   capability net_bind_service,
 
   network inet stream,
   network inet6 stream,
+  network inet dgram,
+  network inet6 dgram,
   network netlink raw,
 
 }
