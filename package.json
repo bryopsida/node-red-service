@@ -21,6 +21,8 @@
     "node-red": "^4.0.8",
     "node-red-contrib-homekit-bridged": "^1.7.2",
     "node-red-contrib-image-tools": "^2.1.1",
+    "node-red-contrib-kafka-manager": "^0.6.2",
+    "node-red-contrib-kafkajs": "^0.0.7",
     "node-red-contrib-snmp-trap-listener": "^2.4.0",
     "node-red-node-arduino": "^1.0.0",
     "node-red-node-pi-gpio": "^2.0.6",
