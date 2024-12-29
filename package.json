@@ -19,6 +19,7 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "node-red": "^4.0.8",
+    "node-red-contrib-cloudantplus": "^2.0.6",
     "node-red-contrib-homekit-bridged": "^1.7.2",
     "node-red-contrib-image-tools": "^2.1.1",
     "node-red-contrib-kafka-manager": "^0.6.2",
