@@ -13,11 +13,23 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@flowfuse/node-red-dashboard": "^1.21.0",
     "@node-red-contrib-themes/theme-collection": "^4.0.11",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "node-red": "^4.0.8",
+    "node-red-contrib-homekit-bridged": "^1.7.2",
+    "node-red-contrib-image-tools": "^2.1.1",
+    "node-red-contrib-snmp-trap-listener": "^2.4.0",
+    "node-red-node-arduino": "^1.0.0",
+    "node-red-node-pi-gpio": "^2.0.6",
+    "node-red-node-ping": "^0.3.3",
+    "node-red-node-sentiment": "^0.1.6",
+    "node-red-node-serialport": "^2.0.3",
+    "node-red-node-smooth": "^0.1.2",
+    "node-red-node-snmp": "^2.0.0",
+    "node-red-node-tail": "^0.4.0",
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
